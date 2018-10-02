@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_website_config_settings_slideshare" model="ir.ui.view">
+            <field name="name">Website slideshare settings</field>
+            <field name="model">website.config.settings</field>
+            <field name="inherit_id" ref="website_slides.view_website_config_settings"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website_slide_google_app_key']" position="after">
+                    <field name="website_slide_Slideshare_app_key" />
+                    <field name="website_slide_slideshare_sharedsecret" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
