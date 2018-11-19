@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_google_direction_service_google_direction_service,google_direction_service.google_direction_service,model_google_direction_service_google_direction_service,,1,0,0,0

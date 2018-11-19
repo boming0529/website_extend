@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="share_page">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <form action="/share/create_order" method="post">
+                        <div id="floating-panel">
+                            <b>Start: </b>
+                            <select name="start" id="start">
+                                <t t-foreach="origin" t-as="o">
+                                    <option t-attf-value="#{o.name}" t-attf-data-lat="#{o.lat}" t-attf-data-lng="#{o.lng}">
+                                        <t t-esc="o.name"/>
+                                    </option>
+                                </t>
+                            </select>
+                            <b>End: </b>
+                            <select name="end" id="end">
+                                <t t-foreach="origin" t-as="d">
+                                    <option t-attf-value="#{d.name}" t-attf-data-lat="#{d.lat}" t-attf-data-lng="#{d.lng}">
+                                        <t t-esc="d.name"/>
+                                    </option>
+                                </t>
+                            </select>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        <div id="map"></div>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=yourcode&#38;callback=initMap">
+                        </script>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="diver_list">
+        <t t-call="website.layout">
+            <div>
+            </div>
+        </t>
+    </template>
+</odoo>

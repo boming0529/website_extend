@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="share_origin_attribute" model="product.attribute">
+            <field name="name">Origin</field>
+            <field name="sequence">1</field>
+        </record>
+        <record id="origin_attribute_value_1" model="product.attribute.value">
+            <field name="name">淡水捷運站</field>
+            <field name="lat">25.167817</field>
+            <field name="lng">121.44556</field>
+            <field name="attribute_id" ref="share_origin_attribute"/>
+        </record>
+        <record id="origin_attribute_value_2" model="product.attribute.value">
+            <field name="name">北投捷運站</field>
+            <field name="lat">25.1318185</field>
+            <field name="lng">121.4986475</field>
+            <field name="attribute_id" ref="share_origin_attribute"/>
+        </record>
+        <record id="origin_attribute_value_3" model="product.attribute.value">
+            <field name="name">士林捷運站</field>
+            <field name="lat">25.0894255</field>
+            <field name="lng">121.5242987</field>
+            <field name="attribute_id" ref="share_origin_attribute"/>
+        </record>
+        <record id="origin_attribute_value_4" model="product.attribute.value">
+            <field name="name">台北車站</field>
+            <field name="lat">25.0471538</field>
+            <field name="lng">121.5139815</field>
+            <field name="attribute_id" ref="share_origin_attribute"/>
+        </record>
+        <record id="share_destination_attribute" model="product.attribute">
+            <field name="name">Destination</field>
+            <field name="sequence">2</field>
+        </record>
+        <record id="destination_attribute_value_1" model="product.attribute.value">
+            <field name="name">淡水捷運站</field>
+            <field name="lat">25.167817</field>
+            <field name="lng">121.44556</field>
+            <field name="attribute_id" ref="share_destination_attribute"/>
+        </record>
+        <record id="destination_attribute_value_2" model="product.attribute.value">
+            <field name="name">北投捷運站</field>
+            <field name="lat">25.1318185</field>
+            <field name="lng">121.4986475</field>
+            <field name="attribute_id" ref="share_destination_attribute"/>
+        </record>
+        <record id="destination_attribute_value_3" model="product.attribute.value">
+            <field name="name">士林捷運站</field>
+            <field name="lat">25.0894255</field>
+            <field name="lng">121.5242987</field>
+            <field name="attribute_id" ref="share_destination_attribute"/>
+        </record>
+        <record id="destination_attribute_value_4" model="product.attribute.value">
+            <field name="name">台北車站</field>
+            <field name="lat">25.0471538</field>
+            <field name="lng">121.5139815</field>
+            <field name="attribute_id" ref="share_destination_attribute"/>
+        </record>
+        <!-- product attribute line -->
+        <record id="share_ride_serivce" model="product.template">
+            <field name="name">Share Ride Service</field>
+        </record>
+        <record id="share_attribute_line_1" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="simple_share_ride.share_ride_serivce"/>
+            <field name="attribute_id" ref="share_origin_attribute"/>
+            <field name="value_ids" eval="[(6,0,[ref('simple_share_ride.origin_attribute_value_1'), ref('simple_share_ride.origin_attribute_value_2'),ref('simple_share_ride.origin_attribute_value_3'), ref('simple_share_ride.origin_attribute_value_4')])]"/>
+        </record>
+        <record id="share_attribute_line_2" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="simple_share_ride.share_ride_serivce"/>
+            <field name="attribute_id" ref="share_destination_attribute"/>
+            <field name="value_ids" eval="[(6,0,[ref('simple_share_ride.destination_attribute_value_1'), ref('simple_share_ride.destination_attribute_value_2'),ref('simple_share_ride.destination_attribute_value_3'), ref('simple_share_ride.destination_attribute_value_4')])]"/>
+        </record>
+        <!-- product template -->
+        <!-- <record id="share_ride_serivce" model="product.template">
+            <field name="attribute_line_ids" eval="[(6,0,[ref('simple_share_ride.share_attribute_line_1'), ref('simple_share_ride.share_attribute_line_2')])]"/>
+        </record> -->
+
+    </data>
+</odoo>
