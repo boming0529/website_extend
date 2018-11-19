@@ -10,24 +10,28 @@
             <field name="name">淡水捷運站</field>
             <field name="lat">25.167817</field>
             <field name="lng">121.44556</field>
+            <field name="sequence">1</field>
             <field name="attribute_id" ref="share_origin_attribute"/>
         </record>
         <record id="origin_attribute_value_2" model="product.attribute.value">
             <field name="name">北投捷運站</field>
             <field name="lat">25.1318185</field>
             <field name="lng">121.4986475</field>
+            <field name="sequence">2</field>
             <field name="attribute_id" ref="share_origin_attribute"/>
         </record>
         <record id="origin_attribute_value_3" model="product.attribute.value">
             <field name="name">士林捷運站</field>
             <field name="lat">25.0894255</field>
             <field name="lng">121.5242987</field>
+            <field name="sequence">3</field>
             <field name="attribute_id" ref="share_origin_attribute"/>
         </record>
         <record id="origin_attribute_value_4" model="product.attribute.value">
             <field name="name">台北車站</field>
             <field name="lat">25.0471538</field>
             <field name="lng">121.5139815</field>
+            <field name="sequence">4</field>
             <field name="attribute_id" ref="share_origin_attribute"/>
         </record>
         <record id="share_destination_attribute" model="product.attribute">
@@ -38,24 +42,28 @@
             <field name="name">淡水捷運站</field>
             <field name="lat">25.167817</field>
             <field name="lng">121.44556</field>
+            <field name="sequence">5</field>
             <field name="attribute_id" ref="share_destination_attribute"/>
         </record>
         <record id="destination_attribute_value_2" model="product.attribute.value">
             <field name="name">北投捷運站</field>
             <field name="lat">25.1318185</field>
             <field name="lng">121.4986475</field>
+            <field name="sequence">6</field>
             <field name="attribute_id" ref="share_destination_attribute"/>
         </record>
         <record id="destination_attribute_value_3" model="product.attribute.value">
             <field name="name">士林捷運站</field>
             <field name="lat">25.0894255</field>
             <field name="lng">121.5242987</field>
+            <field name="sequence">7</field>
             <field name="attribute_id" ref="share_destination_attribute"/>
         </record>
         <record id="destination_attribute_value_4" model="product.attribute.value">
             <field name="name">台北車站</field>
             <field name="lat">25.0471538</field>
             <field name="lng">121.5139815</field>
+            <field name="sequence">8</field>
             <field name="attribute_id" ref="share_destination_attribute"/>
         </record>
         <!-- product attribute line -->
