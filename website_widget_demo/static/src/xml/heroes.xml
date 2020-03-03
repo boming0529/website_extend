@@ -3,7 +3,7 @@
     <t t-name="demo.heroes">
         <ul class="heroes">
             <li t-foreach="widget.heroes" t-as="hero">
-                <span class="badge" t-esc="hero.id"></span>
+                <span class="badges" t-esc="hero.id"></span>
                 <t t-esc="hero.name" />
             </li>
         </ul>
