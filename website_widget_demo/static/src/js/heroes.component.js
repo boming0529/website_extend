@@ -2,6 +2,7 @@ odoo.define('heroes.component', function (require) {
     'use strict'
 
     var ajax = require('web.ajax');
+    var rpc = require('web.rpc');
     let core = require('web.core');
     let Widget = require('web.Widget');
 
@@ -11,47 +12,38 @@ odoo.define('heroes.component', function (require) {
 
     var Hero = Widget.extend({
         template: 'demo.heroes',
-        init: function (el) {
+        xmlDependencies: ['/website_widget_demo/static/src/xml/heroes.xml'],
+        init: function (el, heroes) {
             this._super(el, arguments);
-            this.heroes = []
-        },
-        willStart: function () {
-            var self = this;
-            this.get_hero().then(function (datas) { 
-                self.heroes = datas
-            });
-            return ajax.loadXML('/website_widget_demo/static/src/xml/heroes.xml', qweb);
+            this.heroes = heroes
         },
         start: function () {
 
         },
-        get_hero: function () {
-            return new Promise(function (resolve, reject) {
-                var datas = {
-                    'jsonrpc': '2.0',
-                    'method': 'call',
-                    'params': {},
-                    'id': Math.floor(Math.random() * 1000 * 1000 * 1000)
-                }
-                $.ajax({
-                    type: 'POST',
-                    url: '/get/heroes/',
-                    dataType: 'json',
-                    data: JSON.stringify(datas),
-                    async: true,
-                    contentType: "application/json; charset=utf-8",
-                }).done(function (data) {
-                    var jsondata = JSON.parse(data.result);
-                    resolve(jsondata.heroes);
-                })
-            });
-        }
+        
     })
 
     $(function () {
+
+        var get_hero = function() {
+            return new Promise(function (resolve, reject) {
+                var self = this;
+                rpc.query({
+                    route: '/get/heroes/',
+                    method: 'post',
+                    params: {}
+                }).then(function (data) {
+                    resolve(data.heroes);
+                })
+            });
+        }
+
         let container = $('#my_heroes');
         if (container) {
-            new Hero(this).appendTo(container);
+            // DI 
+            get_hero().then(function (heroes) {
+                new Hero(this, heroes).appendTo(container);
+            });
         }
     })
 

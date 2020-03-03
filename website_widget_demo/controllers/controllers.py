@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import http
-import json
 
 
 class WebsiteWidgetDemo(http.Controller):
@@ -24,7 +23,7 @@ class WebsiteWidgetDemo(http.Controller):
 
     @http.route('/get/heroes/', type="json", auth='public', website=True, method=['POST'], csrf=False)
     def get_heroes(self, **kw):
-        return json.dumps({'heroes':  [
+        return {'heroes':  [
                 {'id': 11, 'name': 'Mr. Nice'},
                 {'id': 12, 'name': 'Narco'},
                 {'id': 13, 'name': 'Bombasto'},
@@ -36,4 +35,4 @@ class WebsiteWidgetDemo(http.Controller):
                 {'id': 19, 'name': 'Magma'},
                 {'id': 20, 'name': 'Tornado'}
             ]
-        })
+        }
