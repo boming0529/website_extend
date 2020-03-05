@@ -2,7 +2,7 @@
 <templates id="template" xml:space="preserve">
     <t t-name="demo.heroes">
         <ul class="heroes">
-            <li t-foreach="widget.heroes" t-as="hero">
+            <li t-foreach="widget.heroes" t-as="hero" t-att-data-hero="hero.id">
                 <span class="badges" t-esc="hero.id"></span>
                 <t t-esc="hero.name" />
             </li>

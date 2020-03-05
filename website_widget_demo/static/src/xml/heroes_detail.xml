@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="demo.heroes.detail">
+        <div t-if="widget.hero">
+            <h2 t-esc="widget.title"></h2>
+            <div>
+                <label>id :</label>
+                <t t-esc="widget.hero.id" />
+            </div>
+            <div>
+                <label>name :</label>
+                <input t-att-value="widget.hero.name" placeholder="name" />
+            </div>
+        </div>
+    </t>
+</templates>

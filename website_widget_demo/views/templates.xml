@@ -6,13 +6,16 @@
             <link rel="stylesheet" type="text/scss" href="/website_widget_demo/static/src/scss/heroes.scss" t-ignore="true"/>
         </xpath>
         <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/website_widget_demo/static/src/js/heroes.detail.js"/>
             <script type="text/javascript" src="/website_widget_demo/static/src/js/heroes.component.js"/>
+
         </xpath>
     </template>
 
     <template id="index" name="here demo index">
         <t t-call="website.layout">
             <div id="my_heroes"></div>
+            <div class="heroes_detail"></div>
         </t>
     </template>
 
